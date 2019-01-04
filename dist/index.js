@@ -17,12 +17,13 @@ let OnQueryUpdated = class OnQueryUpdated extends Vue {
         this.lastActivePath = '';
     }
     callOnQueryUpdated(newQuery = this.$route.query, diffResult) {
-        if (typeof this.onQueryUpdated === 'function') {
+        const onQueryUpdated = this.onQueryUpdated || this.$options.onQueryUpdated;
+        if (typeof onQueryUpdated === 'function') {
             // 对于keepAlive的路由页面，重新进入时如果query和离开时相同，不触发
             if (this.$route.fullPath === this.lastActivePath)
                 return;
             this.lastActivePath = this.$route.fullPath;
-            this.onQueryUpdated(new Query(newQuery), diffResult);
+            onQueryUpdated.apply(this, [new Query(newQuery), diffResult]);
         }
     }
     onQueryChanged(newQuery, oldQuery) {
