@@ -1,0 +1,44 @@
+{
+  "name": "on-query-updated",
+  "version": "1.0.0",
+  "description": "Mixin 该 Vue 组件，给页面增加一个响应 $route.query 变化的 onQueryUpdated 回调",
+  "keywords": [
+    "vue",
+    "mixin",
+    "router",
+    "vue-router",
+    "hook",
+    "query"
+  ],
+  "main": "dist/index.js",
+  "typings": "types/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aweiu/on-query-updated.git"
+  },
+  "author": "aweiu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aweiu/on-query-updated/issues"
+  },
+  "homepage": "https://github.com/aweiu/on-query-updated#readme",
+  "dependencies": {
+    "simple-compare": "^1.0.0",
+    "vue-property-decorator": "^6.0.0",
+    "wow-query": "^1.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^2.3.0",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.2.2",
+    "vue": "^2.5.21",
+    "vue-router": "^3.0.2"
+  }
+}
