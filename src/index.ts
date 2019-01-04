@@ -9,11 +9,12 @@ export default class OnQueryUpdated extends Vue {
   private lastActivePath = ''
 
   callOnQueryUpdated (newQuery: QueryData = this.$route.query, diffResult?: DiffResult) {
-    if (typeof (this as any).onQueryUpdated === 'function') {
+    const onQueryUpdated = (this as any).onQueryUpdated || (this.$options as any).onQueryUpdated
+    if (typeof onQueryUpdated === 'function') {
       // 对于keepAlive的路由页面，重新进入时如果query和离开时相同，不触发
       if (this.$route.fullPath === this.lastActivePath) return
-      this.lastActivePath = this.$route.fullPath;
-      (this as any).onQueryUpdated(new Query(newQuery), diffResult)
+      this.lastActivePath = this.$route.fullPath
+      onQueryUpdated.apply(this, [new Query(newQuery), diffResult])
     }
   }
 
