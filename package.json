@@ -1,6 +1,6 @@
 {
   "name": "on-query-updated",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Mixin 该 Vue 组件，给页面增加一个响应 $route.query 变化的 onQueryUpdated 回调",
   "keywords": [
     "vue",
